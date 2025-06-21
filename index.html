@@ -1,52 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>PJStore</title>
-  <style>
-    body { font-family: sans-serif; background: #111; color: #fff; text-align: center; }
-    .app { border: 1px solid #444; margin: 15px; padding: 10px; border-radius: 10px; background: #222; width: 250px; display: inline-block; }
-    img { width: 100px; border-radius: 10px; }
-    a { color: lime; display: block; margin-top: 10px; }
-    .news { margin: 20px; background: #333; padding: 10px; border-radius: 10px; }
-    .news a { color: #e45419; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Website</title>
 </head>
 <body>
-  <h1>Welcome to PJStore</h1>
-  <div id="apps"></div>
-  <div id="news"></div>
-
-  <script>
-    fetch('source.json')
-      .then(res => res.json())
-      .then(data => {
-        const appsContainer = document.getElementById('apps');
-        data.apps.forEach(app => {
-          const appEl = document.createElement('div');
-          appEl.className = 'app';
-          appEl.innerHTML = `
-            <img src="${app.iconURL}" alt="${app.name}"><br>
-            <strong>${app.name}</strong><br>
-            <small>Version: ${app.versions[0] || 'N/A'}</small><br>
-            <p>${app.localizedDescription}</p>
-            <a href="itms-services://?action=download-manifest&url=https://yourusername.github.io/yourrepo/${app.bundleIdentifier}.plist">Install</a>
-          `;
-          appsContainer.appendChild(appEl);
-        });
-
-        // Load news section
-        const newsContainer = document.getElementById('news');
-        data.news.forEach(news => {
-          const newsEl = document.createElement('div');
-          newsEl.className = 'news';
-          newsEl.innerHTML = `
-            <strong>${news.title}</strong><br>
-            <p>${news.caption}</p>
-            <a href="${news.url}">Read more</a>
-          `;
-          newsContainer.appendChild(newsEl);
-        });
-      });
-  </script>
+    <!-- Content will go here -->
 </body>
 </html>
