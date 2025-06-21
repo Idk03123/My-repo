@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>My Repo JSON</title>
+  <style>
+    body {
+      background: #111;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    fetch('source.json')
+      .then(res => res.text())
+      .then(data => {
+        document.body.textContent = data;
+      })
+      .catch(err => {
+        document.body.textContent = '❌ Failed to load source.json\n' + err;
+      });
+  </script>
+</body>
+</html>
